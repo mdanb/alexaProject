@@ -1,0 +1,350 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "study guide",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "Assist me",
+                        "I need assistance ",
+                        "How does this skill work",
+                        "Explain how this skill works",
+                        "How do I use this skill",
+                        "help me",
+                        "please help",
+                        "can you help me",
+                        "how do I interact with this skill",
+                        "help "
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "CollectCourseIntent",
+                    "slots": [
+                        {
+                            "name": "course",
+                            "type": "course",
+                            "samples": [
+                                "{course} "
+                            ]
+                        },
+                        {
+                            "name": "actionVerb",
+                            "type": "actionVerb"
+                        },
+                        {
+                            "name": "iWantTo",
+                            "type": "iWantTo"
+                        }
+                    ],
+                    "samples": [
+                        "{course}",
+                        "{iWantTo} {actionVerb} {course}",
+                        "{actionVerb} {course}"
+                    ]
+                },
+                {
+                    "name": "CollectQuestionIntent",
+                    "slots": [
+                        {
+                            "name": "sQuery",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "Why's {sQuery}",
+                        "Who's {sQuery}",
+                        "Where's {sQuery}",
+                        "What's {sQuery}",
+                        "How's {sQuery}",
+                        "How {sQuery}",
+                        "how is {sQuery}",
+                        "Please {sQuery}",
+                        "Who {sQuery}",
+                        "Why {sQuery}",
+                        "Where {sQuery}",
+                        "When {sQuery}",
+                        "What {sQuery}",
+                        "Explain {sQuery}",
+                        "Can you tell me {sQuery}",
+                        "Can you explain {sQuery}",
+                        "Can you {sQuery}",
+                        "Describe {sQuery}",
+                        "Tell me about {sQuery}",
+                        "Explain to me {sQuery}",
+                        "Tell me {sQuery}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "course",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Orgo one",
+                                "synonyms": [
+                                    "Chemistry two hundred and ten",
+                                    "Chemistry two hundred ten",
+                                    "Chemistry two ten"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Chemistry one thirty",
+                                "synonyms": [
+                                    "Chemistry one hundred and thirty",
+                                    "Chemistry one hundred thirty",
+                                    "General Chemistry",
+                                    "Gen Chem"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Calc one",
+                                "synonyms": [
+                                    "Math one hundred fifteen",
+                                    "Math one fifteen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Calc two",
+                                "synonyms": [
+                                    "Math one hundred sixteen",
+                                    "Math one sixteen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Extreme weather",
+                                "synonyms": [
+                                    "Climate one oh two",
+                                    "Climate one hundred and two",
+                                    "Earth one hundred forty four",
+                                    "Climate one hundred two"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Elementary Programming concepts",
+                                "synonyms": [
+                                    "EECS one hundred eighty three",
+                                    "EECS one eighty three",
+                                    "EECS one hundred and eighty three"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Calc three",
+                                "synonyms": [
+                                    "Multivariable calculus",
+                                    "calculus three"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Intro to Statistics",
+                                "synonyms": [
+                                    "Stats two fifty",
+                                    "Stats two hundred and fifty",
+                                    "Stats and data analysis",
+                                    "Intro to Statistics and Data Analysis"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "actionVerb",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Study",
+                                "synonyms": [
+                                    "Review",
+                                    "Investigate",
+                                    "Go over",
+                                    "Prepare for",
+                                    "Explore",
+                                    "Talk about",
+                                    "Learn about",
+                                    "Learn",
+                                    "Tell me about",
+                                    "I'm going to say",
+                                    "Let's say",
+                                    "I wanna do ",
+                                    "I wanna",
+                                    "Let's do"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "iWantTo",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "I want to",
+                                "synonyms": [
+                                    "I'd like to",
+                                    "I would like to",
+                                    "Let's"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "CollectCourseIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "course",
+                            "type": "course",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1506851935714.420040787183"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.658173477323.820151641791.492308277850"
+                                },
+                                {
+                                    "type": "isNotInSet",
+                                    "prompt": "Slot.Validation.66870548466.1076326583746.361282319898",
+                                    "values": [
+                                        "Chemistry",
+                                        "Programming",
+                                        "Mathematics",
+                                        "Physics"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "actionVerb",
+                            "type": "actionVerb",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "iWantTo",
+                            "type": "iWantTo",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "SKILL_RESPONSE"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1506851935714.420040787183",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which class would you like to review?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1506851935714.1333254234073.296458267764",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Give me one for now. Don't worry, you can always ask me about the other later."
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1506851935714.1333254234073.39719923375",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Sorry I can't do that. I can only help you with course logistics or subject material for now. Which would you like?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1491654645206.132421466474",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Would you like to go over course logistics or would you rather review course material?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.658173477323.820151641791.492308277850",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "I'm sorry I cannot help you with {course} today. Please check again later. Is there any other course you want help with?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.66870548466.1076326583746.361282319898",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please be more specific about the course you would like to review, including the course number. "
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1427151992413.13078688690",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "So you want to go over {course} ?"
+                    }
+                ]
+            }
+        ]
+    }
+}
